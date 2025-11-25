@@ -59,9 +59,9 @@ jobs:
           action: "upload"
           ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
           # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
-          app_location: "/" # App source code path
+          app_location: "dist/logframe/browser" # App artifacts location (pre-built, Angular 19 puts output in browser subfolder)
           api_location: "" # Api source code path - optional
-          output_location: "dist/logframe/browser" # Built app content directory (Angular 19 puts output in browser subfolder)
+          output_location: "" # Not needed when using skip_app_build
           skip_app_build: true # Skip build since we already built the app
           github_id_token: ${{ steps.idtoken.outputs.result }}
           ###### End of Repository/Build Configurations ######
