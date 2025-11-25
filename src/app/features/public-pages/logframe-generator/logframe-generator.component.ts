@@ -458,7 +458,7 @@ export class LogframeGeneratorComponent extends PublicPageBaseComponent implemen
         windowWidth: width,
         windowHeight: height,
         removeContainer: false,
-        onclone: (clonedDoc) => {
+        onclone: (clonedDoc: Document) => {
           // Ensure all styles are applied in the cloned document
           const clonedElement = clonedDoc.getElementById('logframe-matrix-clone');
           if (clonedElement) {
@@ -476,7 +476,7 @@ export class LogframeGeneratorComponent extends PublicPageBaseComponent implemen
       }
 
       // Convert canvas to blob for better compatibility
-      canvas.toBlob((blob) => {
+      canvas.toBlob((blob: Blob | null) => {
         if (!blob || blob.size === 0) {
           alert(this.labels.export.errorExportFailed());
           return;
