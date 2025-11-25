@@ -6,8 +6,8 @@ import { AppSettings } from '@app/shared/models/miscellaneous/app-settings.model
 export const APP_SETTINGS: AppSettings = {
   appName: 'Logframe',
   appVersion: '1.0.0',
-  defaultLanguage: 'en',
-  supportedLanguages: ['en', 'nl'],
+  defaultLanguage: 'th',
+  supportedLanguages: ['en', 'th'],
   endpoints: {
     mentors: '',
     api: '',

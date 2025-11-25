@@ -3,10 +3,10 @@
 // 🧠 Simple routes configuration for logframe app
 
 import { Routes } from '@angular/router';
-import { HelloWorldComponent } from '../features/public-pages/hello-world/hello-world.component';
+import { LogframeGeneratorComponent } from '../features/public-pages/logframe-generator/logframe-generator.component';
 
 export const routes: Routes = [
-  { path: '', component: HelloWorldComponent },
+  { path: '', component: LogframeGeneratorComponent },
   { path: '**', redirectTo: '' }
 ];
 

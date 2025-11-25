@@ -1,7 +1,7 @@
 // logframe/src/app/shared/models/miscellaneous/app-settings.model.ts
 // App-wide configuration settings interfaces and types
 
-export type Language = 'en' | 'nl';
+export type Language = 'en' | 'th';
 
 export interface AppSettings {
   appName: string;

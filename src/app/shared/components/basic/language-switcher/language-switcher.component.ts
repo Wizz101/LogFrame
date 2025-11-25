@@ -23,7 +23,7 @@ export class LanguageSwitcherComponent {
   readonly labels = {
     language: this.translationService.translate('GENERAL.LANGUAGE'),
     english: this.translationService.translate('GENERAL.ENGLISH'),
-    dutch: this.translationService.translate('GENERAL.DUTCH'),
+    thai: this.translationService.translate('GENERAL.THAI'),
   };
 
   switchLanguage(lang: Language): void {
