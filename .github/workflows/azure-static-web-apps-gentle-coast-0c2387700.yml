@@ -34,10 +34,10 @@ jobs:
           version: 8
       
       - name: Install dependencies
-        run: cd frontend && pnpm install
+        run: pnpm install
       
       - name: Build
-        run: cd frontend && pnpm run build --configuration production
+        run: pnpm run build --configuration production
       
       - name: Install OIDC Client from Core Package
         run: npm install @actions/core@1.6.0 @actions/http-client
@@ -59,7 +59,7 @@ jobs:
           action: "upload"
           ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
           # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
-          app_location: "/frontend" # App source code path
+          app_location: "/" # App source code path
           api_location: "" # Api source code path - optional
           output_location: "dist/logframe" # Built app content directory - optional
           github_id_token: ${{ steps.idtoken.outputs.result }}
@@ -74,4 +74,6 @@ jobs:
         id: closepullrequest
         uses: Azure/static-web-apps-deploy@v1
         with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_GENTLE_COAST_0C2387700 }}
           action: "close"
+          app_location: "/"
