@@ -1,0 +1,14 @@
+{
+  "GENERAL": {
+    "LANG": "nl",
+    "LANGUAGE": "Taal",
+    "ENGLISH": "Engels",
+    "DUTCH": "Nederlands",
+    "LOADING": "Laden..."
+  },
+  "HELLO_WORLD": {
+    "TITLE": "Hallo Wereld",
+    "MESSAGE": "Welkom bij Logframe! Dit is een eenvoudige hallo wereld pagina met ondersteuning voor taalwisseling."
+  }
+}
+

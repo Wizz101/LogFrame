@@ -1,0 +1,14 @@
+{
+  "GENERAL": {
+    "LANG": "en",
+    "LANGUAGE": "Language",
+    "ENGLISH": "English",
+    "DUTCH": "Dutch",
+    "LOADING": "Loading..."
+  },
+  "HELLO_WORLD": {
+    "TITLE": "Hello World",
+    "MESSAGE": "Welcome to Logframe! This is a simple hello world page with language switching support."
+  }
+}
+

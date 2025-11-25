@@ -1,0 +1,67 @@
+@import url('https://rsms.me/inter/inter.css');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ANIMATIONS */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* COLORS & THEME */
+:root {
+  --background: #ffffff;
+  --foreground: #0a0a0a;
+  --card: #ffffff;
+  --card-foreground: #0a0a0a;
+  --popover: #ffffff;
+  --popover-foreground: #0a0a0a;
+
+  --primary: #FFA500;
+  --primary-dark: #fe7e20;
+  --primary-light: #FFB74D;
+
+  --secondary: #f1f5f9;
+  --secondary-dark: #e2e8f0;
+  --secondary-light: #f8fafc;
+
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+
+  --accent: #f1f5f9;
+  --accent-foreground: #1e293b;
+
+  --destructive: #ef4444;
+  --destructive-foreground: #f8fafc;
+
+  --border: #e5e7eb;
+  --input: #e5e7eb;
+  --ring: #fe7e20;
+  --radius: 0.5rem;
+
+  --gray-900: #1a1a1a;
+  --gray-700: #4d4d4d;
+  --gray-400: #808080;
+}
+
+/* BASE */
+@layer base {
+  :where(*) {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
