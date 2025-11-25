@@ -3,12 +3,149 @@
     "LANG": "en",
     "LANGUAGE": "Language",
     "ENGLISH": "English",
-    "DUTCH": "Dutch",
-    "LOADING": "Loading..."
+    "THAI": "Thai",
+    "LOADING": "Loading...",
+    "SAVE": "Save",
+    "CANCEL": "Cancel",
+    "REMOVE": "Remove"
   },
-  "HELLO_WORLD": {
-    "TITLE": "Hello World",
-    "MESSAGE": "Welcome to Logframe! This is a simple hello world page with language switching support."
+  "LOGFRAME": {
+    "HEADER": {
+      "TITLE": "Logframe Generator",
+      "SUBTITLE": "Create professional logical frameworks with ease",
+      "FEATURES": {
+        "TEMPLATES": "25+ Templates",
+        "EXPORT": "Smart Export",
+        "BEST_PRACTICES": "Best Practices",
+        "AUTOSAVE": "Auto-Save"
+      }
+    },
+    "PROJECT_INFO": {
+      "TITLE": "Project Information",
+      "PROJECT_TITLE": "Project Title",
+      "PROJECT_TITLE_PLACEHOLDER": "Enter your project title",
+      "ORGANIZATION": "Organization",
+      "ORGANIZATION_PLACEHOLDER": "Your organization name",
+      "DONOR": "Donor/Funder",
+      "DONOR_PLACEHOLDER": "Funding organization",
+      "DURATION": "Duration",
+      "DURATION_PLACEHOLDER": "e.g., 2024-2027"
+    },
+    "LOGICAL_FRAMEWORK": {
+      "TITLE": "Logical Framework",
+      "ADD_GOAL": "+ Add Goal",
+      "ADD_OUTCOME": "+ Add Outcome",
+      "ADD_OUTPUT": "+ Add Output",
+      "ADD_ACTIVITY": "+ Add Activity",
+      "DESCRIPTION": "Description",
+      "DESCRIPTION_PLACEHOLDER": "Describe the {type}...",
+      "DESCRIPTION_HELPER": "What will be achieved at this level?",
+      "INDICATORS": "Indicators",
+      "INDICATORS_PLACEHOLDER": "How will success be measured?",
+      "INDICATORS_HELPER": "SMART indicators (Specific, Measurable, Achievable, Relevant, Time-bound)",
+      "VERIFICATION": "Means of Verification",
+      "VERIFICATION_PLACEHOLDER": "How will data be collected?",
+      "VERIFICATION_HELPER": "Data sources and collection methods",
+      "ASSUMPTIONS": "Assumptions/Risks",
+      "ASSUMPTIONS_PLACEHOLDER": "What could affect success?",
+      "ASSUMPTIONS_HELPER": "External factors that may impact results",
+      "EMPTY_STATE": "No levels added yet. Click the buttons above to add Goal, Outcome, Output, or Activity levels.",
+      "LEVEL_TYPES": {
+        "GOAL": "Goal",
+        "OUTCOME": "Outcome",
+        "OUTPUT": "Output",
+        "ACTIVITY": "Activity"
+      }
+    },
+    "EXPORT": {
+      "TITLE": "Export Your Logframe",
+      "DESCRIPTION": "Download your logical framework in various formats",
+      "EXPORT_IMAGE": "Save as Matrix Image",
+      "EXPORT_WORD": "Export to Word",
+      "EXPORT_CSV": "Export to CSV",
+      "MATRIX_TITLE": "Logical Framework Matrix",
+      "UNTITLED_PROJECT": "Untitled Project",
+      "ORGANIZATION_LABEL": "Organization",
+      "DONOR_LABEL": "Donor",
+      "DURATION_LABEL": "Duration",
+      "TABLE_HEADER_LEVEL": "Level",
+      "TABLE_HEADER_DESCRIPTION": "Description",
+      "TABLE_HEADER_INDICATORS": "Indicators",
+      "TABLE_HEADER_VERIFICATION": "Means of Verification",
+      "TABLE_HEADER_ASSUMPTIONS": "Assumptions/Risks",
+      "ERROR_NO_CONTENT": "Please add some content to your logframe before exporting.",
+      "ERROR_NO_CONTENT_IMAGE": "Please add some content to your logframe before exporting as matrix.",
+      "ERROR_MATRIX_NOT_FOUND": "Matrix element not found. Please ensure the logframe has content.",
+      "ERROR_EXPORT_FAILED": "Failed to export image. Please try again.",
+      "CONFIRM_REMOVE_LEVEL": "Are you sure you want to remove this level? This action cannot be undone."
+    },
+    "FOOTER": {
+      "COPYRIGHT": "Copyright © PrimeShift Consulting"
+    },
+    "BEST_PRACTICES": {
+      "TITLE": "Logframe Best Practices",
+      "DESCRIPTION": "Follow these guidelines to create effective and professional logical frameworks",
+      "STRUCTURE": {
+        "TITLE": "Structure & Hierarchy",
+        "ITEMS": [
+          "Start with a clear Goal (Impact level)",
+          "Define 2-4 Outcomes that contribute to the Goal",
+          "Create 3-5 Outputs per Outcome",
+          "List key Activities needed for each Output",
+          "Ensure logical flow: Activities → Outputs → Outcomes → Goal"
+        ]
+      },
+      "SMART": {
+        "TITLE": "SMART Indicators",
+        "ITEMS": [
+          "Specific: Clear and well-defined",
+          "Measurable: Quantifiable with units",
+          "Achievable: Realistic and attainable",
+          "Relevant: Directly linked to objectives",
+          "Time-bound: Include timeframes"
+        ]
+      },
+      "VERIFICATION": {
+        "TITLE": "Means of Verification",
+        "ITEMS": [
+          "Specify exact data sources",
+          "Include data collection methods",
+          "Consider cost and feasibility",
+          "Plan for baseline data collection",
+          "Use multiple sources when possible"
+        ]
+      },
+      "ASSUMPTIONS": {
+        "TITLE": "Assumptions & Risks",
+        "ITEMS": [
+          "Identify external factors beyond project control",
+          "Focus on conditions necessary for success",
+          "Be realistic about potential challenges",
+          "Consider political, economic, and social factors",
+          "Include mitigation strategies where possible"
+        ]
+      },
+      "QUALITY": {
+        "TITLE": "Quality Checks",
+        "ITEMS": [
+          "Test the vertical logic (if-then relationships)",
+          "Check horizontal logic (indicators match objectives)",
+          "Ensure indicators are not activities in disguise",
+          "Verify all levels have appropriate indicators",
+          "Review with stakeholders before finalizing"
+        ]
+      },
+      "MISTAKES": {
+        "TITLE": "Common Mistakes to Avoid",
+        "ITEMS": [
+          "Don't confuse activities with outputs",
+          "Avoid too many objectives per level",
+          "Don't use vague or unmeasurable language",
+          "Avoid indicators that measure inputs instead of results",
+          "Don't ignore important assumptions"
+        ]
+      }
+    }
   }
 }
 

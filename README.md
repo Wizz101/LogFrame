@@ -1,6 +1,6 @@
 # Logframe
 
-A standalone Angular 19 application based on the MentoringShift frontend architecture.
+A standalone Angular 19 application based on the PrimeShift Consulting frontend architecture.
 
 ## Features
 
@@ -77,7 +77,7 @@ logframe/
 
 ## Architecture
 
-This project follows the same architecture patterns as the MentoringShift frontend:
+This project follows the same architecture patterns as the PrimeShift Consulting frontend:
 
 - **Base Services**: `BaseDataService` for data services, `TranslationService` for i18n
 - **Base Components**: `PublicPageBaseComponent` for public pages

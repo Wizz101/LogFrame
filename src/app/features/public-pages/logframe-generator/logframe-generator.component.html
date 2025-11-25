@@ -1,0 +1,357 @@
+<div class="min-h-screen bg-background">
+  <!-- Language Switcher at Top -->
+  <div class="w-full bg-card border-b border-border py-3 px-4">
+    <div class="max-w-7xl mx-auto flex justify-end">
+      <app-language-switcher />
+    </div>
+  </div>
+
+  <!-- Header Section -->
+  <div class="relative overflow-hidden header-gradient bg-gradient-to-r from-primary to-primary-dark text-white py-16 px-4 sm:px-6 lg:px-8 rounded-b-2xl shadow-xl max-w-7xl mx-auto mt-4 mb-8">
+    <div class="absolute top-5 right-8 gap-4 opacity-30 hidden md:flex">
+      <div class="w-10 h-10 rounded-full flex items-center justify-center text-xl bg-white/10">📊</div>
+      <div class="w-10 h-10 rounded-full flex items-center justify-center text-xl bg-white/10">🎯</div>
+      <div class="w-10 h-10 rounded-full flex items-center justify-center text-xl bg-white/10">📋</div>
+    </div>
+    <div class="text-center relative z-10">
+      <h1 class="mb-4 font-bold text-4xl sm:text-5xl lg:text-6xl text-shadow-lg tracking-tight">
+        {{ labels.header.title() }}
+      </h1>
+      <p class="mb-6 opacity-95 text-lg sm:text-xl lg:text-2xl font-light">
+        {{ labels.header.subtitle() }}
+      </p>
+      <div class="flex justify-center gap-4 sm:gap-6 flex-wrap mt-6">
+        <div class="px-4 py-2 rounded-full text-sm font-medium bg-white/20 backdrop-blur-sm border border-white/30">
+          {{ labels.header.features.templates() }}
+        </div>
+        <div class="px-4 py-2 rounded-full text-sm font-medium bg-white/20 backdrop-blur-sm border border-white/30">
+          {{ labels.header.features.export() }}
+        </div>
+        <div class="px-4 py-2 rounded-full text-sm font-medium bg-white/20 backdrop-blur-sm border border-white/30">
+          {{ labels.header.features.bestPractices() }}
+        </div>
+        <div class="px-4 py-2 rounded-full text-sm font-medium bg-white/20 backdrop-blur-sm border border-white/30">
+          {{ labels.header.features.autosave() }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mx-auto px-4 py-8 max-w-7xl">
+    <!-- Project Information Section -->
+    <div class="bg-card rounded-lg p-6 sm:p-8 mb-8 shadow-lg">
+      <h2 class="mb-6 pb-3 font-bold text-primary text-2xl sm:text-3xl border-b-2 border-border">
+        {{ labels.projectInfo.title() }}
+      </h2>
+      @if (form()) {
+        <form [formGroup]="form()!" class="grid gap-6 grid-cols-1 md:grid-cols-2">
+          <div class="flex flex-col">
+            <label class="mb-2 font-semibold text-foreground">{{ labels.projectInfo.projectTitle() }}</label>
+            <input
+              type="text"
+              formControlName="title"
+              [placeholder]="labels.projectInfo.projectTitlePlaceholder()"
+              class="px-4 py-3 rounded-lg border-2 border-input focus:ring-2 focus:ring-ring focus:border-ring outline-none transition-colors text-base"
+            />
+          </div>
+          <div class="flex flex-col">
+            <label class="mb-2 font-semibold text-foreground">{{ labels.projectInfo.organization() }}</label>
+            <input
+              type="text"
+              formControlName="organization"
+              [placeholder]="labels.projectInfo.organizationPlaceholder()"
+              class="px-4 py-3 rounded-lg border-2 border-input focus:ring-2 focus:ring-ring focus:border-ring outline-none transition-colors text-base"
+            />
+          </div>
+          <div class="flex flex-col">
+            <label class="mb-2 font-semibold text-foreground">{{ labels.projectInfo.donor() }}</label>
+            <input
+              type="text"
+              formControlName="donor"
+              [placeholder]="labels.projectInfo.donorPlaceholder()"
+              class="px-4 py-3 rounded-lg border-2 border-input focus:ring-2 focus:ring-ring focus:border-ring outline-none transition-colors text-base"
+            />
+          </div>
+          <div class="flex flex-col">
+            <label class="mb-2 font-semibold text-foreground">{{ labels.projectInfo.duration() }}</label>
+            <input
+              type="text"
+              formControlName="duration"
+              [placeholder]="labels.projectInfo.durationPlaceholder()"
+              class="px-4 py-3 rounded-lg border-2 border-input focus:ring-2 focus:ring-ring focus:border-ring outline-none transition-colors text-base"
+            />
+          </div>
+        </form>
+      }
+    </div>
+
+    <!-- Logical Framework Section -->
+    <div class="bg-card rounded-lg p-6 sm:p-8 mb-8 shadow-lg">
+      <h2 class="mb-6 font-bold text-primary text-2xl sm:text-3xl">{{ labels.logicalFramework.title() }}</h2>
+      
+      <!-- Add Level Buttons -->
+      <div class="flex flex-wrap gap-3 mb-6">
+        <button
+          type="button"
+          (click)="addLevel('goal')"
+          class="px-6 py-3 rounded-lg font-semibold transition-colors text-white bg-green-600 hover:bg-green-700"
+        >
+          {{ labels.logicalFramework.addGoal() }}
+        </button>
+        <button
+          type="button"
+          (click)="addLevel('outcome')"
+          class="px-6 py-3 rounded-lg font-semibold transition-colors text-white bg-blue-600 hover:bg-blue-700"
+        >
+          {{ labels.logicalFramework.addOutcome() }}
+        </button>
+        <button
+          type="button"
+          (click)="addLevel('output')"
+          class="px-6 py-3 rounded-lg font-semibold transition-colors bg-yellow-500 text-gray-900 hover:bg-yellow-600"
+        >
+          {{ labels.logicalFramework.addOutput() }}
+        </button>
+        <button
+          type="button"
+          (click)="addLevel('activity')"
+          class="px-6 py-3 rounded-lg font-semibold transition-colors text-white bg-purple-600 hover:bg-purple-700"
+        >
+          {{ labels.logicalFramework.addActivity() }}
+        </button>
+      </div>
+
+      <!-- Levels Container -->
+      <div class="space-y-6">
+        @for (level of levels(); track level.id) {
+          <div class="rounded-lg overflow-hidden border border-border">
+            <!-- Level Header -->
+            <div class="px-5 py-4 flex justify-between items-center font-semibold text-white"
+                 [ngClass]="{
+                   'bg-green-600': level.type === 'goal',
+                   'bg-blue-600': level.type === 'outcome',
+                   'bg-yellow-500 text-gray-900': level.type === 'output',
+                   'bg-purple-600': level.type === 'activity'
+                 }">
+              <span>{{ getLevelTypeLabel(level.type) }}</span>
+              <button
+                type="button"
+                (click)="removeLevel(level.id)"
+                class="px-3 py-1 rounded text-sm font-medium text-white transition-colors bg-red-600 hover:bg-red-700"
+              >
+                {{ labels.remove() }}
+              </button>
+            </div>
+            
+            <!-- Level Content -->
+            <div class="p-6 bg-muted">
+              <div class="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 level-grid-mobile">
+                <!-- Description -->
+                <div class="flex flex-col md:col-span-2">
+                  <label class="mb-2 font-semibold text-foreground">{{ labels.logicalFramework.description() }}</label>
+                  <textarea
+                    [value]="level.description"
+                    (input)="updateLevel(level.id, 'description', $any($event.target).value)"
+                    [placeholder]="labels.logicalFramework.descriptionPlaceholder()"
+                    class="px-4 py-3 rounded-lg resize-y min-h-24 border-2 border-input focus:ring-2 focus:ring-ring focus:border-ring outline-none transition-colors text-sm font-sans"
+                  ></textarea>
+                  <p class="helper-text">{{ labels.logicalFramework.descriptionHelper() }}</p>
+                </div>
+                
+                <!-- Indicators -->
+                <div class="flex flex-col">
+                  <label class="mb-2 font-semibold text-foreground text-sm">{{ labels.logicalFramework.indicators() }}</label>
+                  <textarea
+                    [value]="level.indicators"
+                    (input)="updateLevel(level.id, 'indicators', $any($event.target).value)"
+                    [placeholder]="labels.logicalFramework.indicatorsPlaceholder()"
+                    class="px-4 py-3 rounded-lg resize-y min-h-24 border-2 border-input focus:ring-2 focus:ring-ring focus:border-ring outline-none transition-colors text-sm font-sans"
+                  ></textarea>
+                  <p class="helper-text">{{ labels.logicalFramework.indicatorsHelper() }}</p>
+                </div>
+                
+                <!-- Verification -->
+                <div class="flex flex-col">
+                  <label class="mb-2 font-semibold text-foreground text-sm">{{ labels.logicalFramework.verification() }}</label>
+                  <textarea
+                    [value]="level.verification"
+                    (input)="updateLevel(level.id, 'verification', $any($event.target).value)"
+                    [placeholder]="labels.logicalFramework.verificationPlaceholder()"
+                    class="px-4 py-3 rounded-lg resize-y min-h-24 border-2 border-input focus:ring-2 focus:ring-ring focus:border-ring outline-none transition-colors text-sm font-sans"
+                  ></textarea>
+                  <p class="helper-text">{{ labels.logicalFramework.verificationHelper() }}</p>
+                </div>
+                
+                <!-- Assumptions -->
+                <div class="flex flex-col">
+                  <label class="mb-2 font-semibold text-foreground text-sm">{{ labels.logicalFramework.assumptions() }}</label>
+                  <textarea
+                    [value]="level.assumptions"
+                    (input)="updateLevel(level.id, 'assumptions', $any($event.target).value)"
+                    [placeholder]="labels.logicalFramework.assumptionsPlaceholder()"
+                    class="px-4 py-3 rounded-lg resize-y min-h-24 border-2 border-input focus:ring-2 focus:ring-ring focus:border-ring outline-none transition-colors text-sm font-sans"
+                  ></textarea>
+                  <p class="helper-text">{{ labels.logicalFramework.assumptionsHelper() }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        } @empty {
+          <div class="text-center py-12 text-muted-foreground">
+            <p class="text-lg">{{ labels.logicalFramework.emptyState() }}</p>
+          </div>
+        }
+      </div>
+    </div>
+
+    <!-- Export Section -->
+    <div class="bg-card rounded-lg p-6 sm:p-8 mb-8 shadow-lg">
+      <h2 class="mb-2 font-bold text-primary text-2xl sm:text-3xl">{{ labels.export.title() }}</h2>
+      <p class="mb-6 text-muted-foreground">{{ labels.export.description() }}</p>
+      <div class="grid gap-4 mt-5 grid-cols-1 sm:grid-cols-3">
+        <button
+          type="button"
+          (click)="exportAsImage()"
+          class="px-6 py-4 rounded-lg font-semibold text-white transition-all bg-primary hover:bg-primary-dark hover:-translate-y-0.5 shadow-md hover:shadow-lg"
+        >
+          🖼️ {{ labels.export.exportImage() }}
+        </button>
+        <button
+          type="button"
+          (click)="exportToWord()"
+          class="px-6 py-4 rounded-lg font-semibold text-white transition-all bg-primary hover:bg-primary-dark hover:-translate-y-0.5 shadow-md hover:shadow-lg"
+        >
+          📝 {{ labels.export.exportWord() }}
+        </button>
+        <button
+          type="button"
+          (click)="exportToCSV()"
+          class="px-6 py-4 rounded-lg font-semibold text-white transition-all bg-gray-600 hover:bg-gray-700 hover:-translate-y-0.5 shadow-md hover:shadow-lg"
+        >
+          📊 {{ labels.export.exportCsv() }}
+        </button>
+      </div>
+      
+      <!-- Hidden matrix element for image export -->
+      <div id="logframe-matrix" class="hidden">
+        <div class="p-8 bg-white min-w-[1200px]">
+          <h3 class="text-2xl font-bold text-center mb-6">{{ labels.export.matrixTitle() }}</h3>
+          @if (form()) {
+            <div class="mb-4 text-center">
+              <p class="text-xl font-semibold">{{ form()!.get('title')?.value || labels.export.untitledProject() }}</p>
+              <p class="text-sm text-gray-600">
+                {{ form()!.get('organization')?.value || '' }} | 
+                {{ form()!.get('donor')?.value || '' }} | 
+                {{ form()!.get('duration')?.value || '' }}
+              </p>
+            </div>
+          }
+          <table class="w-full border-collapse border-2 border-black">
+            <thead>
+              <tr class="bg-gray-800 text-white">
+                <th class="border-2 border-black p-3 text-left font-bold">{{ labels.export.tableHeaderLevel() }}</th>
+                <th class="border-2 border-black p-3 text-left font-bold">{{ labels.export.tableHeaderDescription() }}</th>
+                <th class="border-2 border-black p-3 text-left font-bold">{{ labels.export.tableHeaderIndicators() }}</th>
+                <th class="border-2 border-black p-3 text-left font-bold">{{ labels.export.tableHeaderVerification() }}</th>
+                <th class="border-2 border-black p-3 text-left font-bold">{{ labels.export.tableHeaderAssumptions() }}</th>
+              </tr>
+            </thead>
+            <tbody>
+              @for (level of levels(); track level.id) {
+                <tr [ngClass]="{
+                  'bg-green-100': level.type === 'goal',
+                  'bg-blue-100': level.type === 'outcome',
+                  'bg-yellow-100': level.type === 'output',
+                  'bg-purple-100': level.type === 'activity'
+                }">
+                  <td class="border-2 border-black p-3 font-bold">{{ getLevelTypeLabel(level.type) }}</td>
+                  <td class="border-2 border-black p-3">{{ level.description }}</td>
+                  <td class="border-2 border-black p-3">{{ level.indicators }}</td>
+                  <td class="border-2 border-black p-3">{{ level.verification }}</td>
+                  <td class="border-2 border-black p-3">{{ level.assumptions }}</td>
+                </tr>
+              }
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Best Practices Section -->
+    <div class="bg-card rounded-lg p-6 sm:p-8 mb-8 shadow-lg">
+      <h2 class="mb-2 pb-3 font-bold text-primary text-2xl sm:text-3xl border-b-2 border-border">
+        {{ labels.bestPractices.title() }}
+      </h2>
+      <p class="mb-6 text-muted-foreground">{{ labels.bestPractices.description() }}</p>
+      
+      <div class="grid gap-6 mt-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <!-- Structure -->
+        <div class="p-6 rounded-lg bg-muted border-l-4 border-primary">
+          <h3 class="mb-3 font-semibold text-foreground text-xl">📋 {{ labels.bestPractices.structure.title() }}</h3>
+          <ul class="list-disc space-y-2 ml-5 text-muted-foreground">
+            @for (item of labels.bestPractices.structure.items; track $index) {
+              <li>{{ item() }}</li>
+            }
+          </ul>
+        </div>
+        
+        <!-- SMART Indicators -->
+        <div class="p-6 rounded-lg bg-muted border-l-4 border-primary">
+          <h3 class="mb-3 font-semibold text-foreground text-xl">📊 {{ labels.bestPractices.smart.title() }}</h3>
+          <ul class="list-disc space-y-2 ml-5 text-muted-foreground">
+            @for (item of labels.bestPractices.smart.items; track $index) {
+              <li>{{ item() }}</li>
+            }
+          </ul>
+        </div>
+        
+        <!-- Verification -->
+        <div class="p-6 rounded-lg bg-muted border-l-4 border-primary">
+          <h3 class="mb-3 font-semibold text-foreground text-xl">🔍 {{ labels.bestPractices.verification.title() }}</h3>
+          <ul class="list-disc space-y-2 ml-5 text-muted-foreground">
+            @for (item of labels.bestPractices.verification.items; track $index) {
+              <li>{{ item() }}</li>
+            }
+          </ul>
+        </div>
+        
+        <!-- Assumptions -->
+        <div class="p-6 rounded-lg bg-muted border-l-4 border-primary">
+          <h3 class="mb-3 font-semibold text-foreground text-xl">⚠️ {{ labels.bestPractices.assumptions.title() }}</h3>
+          <ul class="list-disc space-y-2 ml-5 text-muted-foreground">
+            @for (item of labels.bestPractices.assumptions.items; track $index) {
+              <li>{{ item() }}</li>
+            }
+          </ul>
+        </div>
+        
+        <!-- Quality -->
+        <div class="p-6 rounded-lg bg-muted border-l-4 border-primary">
+          <h3 class="mb-3 font-semibold text-foreground text-xl">✅ {{ labels.bestPractices.quality.title() }}</h3>
+          <ul class="list-disc space-y-2 ml-5 text-muted-foreground">
+            @for (item of labels.bestPractices.quality.items; track $index) {
+              <li>{{ item() }}</li>
+            }
+          </ul>
+        </div>
+        
+        <!-- Mistakes -->
+        <div class="p-6 rounded-lg bg-muted border-l-4 border-primary">
+          <h3 class="mb-3 font-semibold text-foreground text-xl">🎯 {{ labels.bestPractices.mistakes.title() }}</h3>
+          <ul class="list-disc space-y-2 ml-5 text-muted-foreground">
+            @for (item of labels.bestPractices.mistakes.items; track $index) {
+              <li>{{ item() }}</li>
+            }
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="py-6 mt-12 bg-gray-900 text-white">
+    <div class="mx-auto px-4 text-center max-w-7xl">
+      <p class="text-sm">{{ labels.footer.copyright() }}</p>
+    </div>
+  </footer>
+</div>
